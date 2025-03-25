@@ -11,3 +11,8 @@ class ApiClient:
         url = self._build_url(endpoint)
         response = requests.get(url, headers=headers)
         return response
+
+    def get_job_details(self, endpoint, jobID, headers):
+        url = self._build_url(endpoint) + "?id=" + jobID
+        response = requests.get(url, headers=headers)
+        return response
